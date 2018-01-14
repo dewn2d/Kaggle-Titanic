@@ -172,6 +172,12 @@ classifier = SVC(kernel = 'rbf', random_state = 35, gamma = 0.1)
 classifier.fit(X_train, y_train)
 """
 
+from sklearn.decomposition import PCA
+pca = PCA( n_components = None )
+X_train = pca.fit_transform(X_train)
+X_test = pca.fit_transform(X_test)
+explained_variance = pca.explained_variance_ratio_
+
 # Fitting Naive Bayes to the Training set
 from sklearn.naive_bayes import BernoulliNB
 classifier = BernoulliNB()
